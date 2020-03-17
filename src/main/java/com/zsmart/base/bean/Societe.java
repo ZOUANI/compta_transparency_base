@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.zsmart.base.bean; 
+package com.zsmart.base.bean;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,7 +34,9 @@ public class Societe implements Serializable {
     private String identifiantFiscal;
     private String rc;
     private String ice;
+    @Column(precision = 16, scale = 4)
     private BigDecimal capitale;
+    @Column(precision = 16, scale = 4)
     private BigDecimal totalAction;
     @ManyToOne
     private Employee gerant;
@@ -51,7 +54,7 @@ public class Societe implements Serializable {
     private Adherent adherent;
 
     @ManyToOne
-    private TypeDeclarationTvaPeriodiqueDgi typeDeclarationTvaPeriodiqueDgi;
+    private TypeDeclarationTva typeDeclarationTva;
 
     @OneToMany(mappedBy = "societe")
     private List<AssocieSociete> associeSocietes = new ArrayList<AssocieSociete>();
@@ -97,8 +100,8 @@ public class Societe implements Serializable {
     }
 
     public Employee getGerant() {
-        if(gerant==null){
-            gerant=new Employee();
+        if (gerant == null) {
+            gerant = new Employee();
         }
         return gerant;
     }
@@ -108,8 +111,8 @@ public class Societe implements Serializable {
     }
 
     public Adherent getAdherent() {
-        if(adherent==null){
-            adherent=new Adherent();
+        if (adherent == null) {
+            adherent = new Adherent();
         }
         return adherent;
     }
@@ -174,12 +177,12 @@ public class Societe implements Serializable {
         this.comptable = comptable;
     }
 
-    public TypeDeclarationTvaPeriodiqueDgi getTypeDeclarationTvaPeriodiqueDgi() {
-        return typeDeclarationTvaPeriodiqueDgi;
+    public TypeDeclarationTva getTypeDeclarationTva() {
+        return typeDeclarationTva;
     }
 
-    public void setTypeDeclarationTvaPeriodiqueDgi(TypeDeclarationTvaPeriodiqueDgi typeDeclarationTvaPeriodiqueDgi) {
-        this.typeDeclarationTvaPeriodiqueDgi = typeDeclarationTvaPeriodiqueDgi;
+    public void setTypeDeclarationTva(TypeDeclarationTva typeDeclarationTva) {
+        this.typeDeclarationTva = typeDeclarationTva;
     }
 
     public Long getId() {

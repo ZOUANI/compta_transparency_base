@@ -7,6 +7,7 @@ package com.zsmart.base.bean;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,7 +29,9 @@ public class Employee implements Serializable {
     private String prenom;
     private String cin;
     private String adresse;
+    @Column(precision = 16, scale = 4)
     private BigDecimal salaire;
+    @Column(precision = 16, scale = 4)
     private BigDecimal prime;
 
     @ManyToOne
@@ -128,9 +131,9 @@ public class Employee implements Serializable {
         return true;
     }
 
-       @Override
+    @Override
     public String toString() {
-        return nom+" "+prenom;
+        return nom + " " + prenom;
     }
 
 }

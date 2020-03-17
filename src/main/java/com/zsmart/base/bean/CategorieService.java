@@ -5,8 +5,6 @@
  */
 package com.zsmart.base.bean;
 
-import com.zsmart.compta.transparency.bean.*;
-import com.zsmart.base.bean.Service;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

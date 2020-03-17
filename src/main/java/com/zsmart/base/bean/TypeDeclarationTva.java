@@ -17,7 +17,7 @@ import javax.persistence.Id;
  * @author YOUNES
  */
 @Entity
-public class TypeDeclarationTvaPeriodiqueDgi implements Serializable {
+public class TypeDeclarationTva implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -56,7 +56,7 @@ public class TypeDeclarationTvaPeriodiqueDgi implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final TypeDeclarationTvaPeriodiqueDgi other = (TypeDeclarationTvaPeriodiqueDgi) obj;
+        final TypeDeclarationTva other = (TypeDeclarationTva) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
