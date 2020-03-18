@@ -21,13 +21,12 @@ import javax.persistence.OneToMany;
 @Entity
 public class CategorieService implements Serializable {
 
-    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String libelle;
     @OneToMany(mappedBy = "categorieService")
-    private List<Service> services = new ArrayList<Service>();
+    private List<ServicePropose> serviceProposes = new ArrayList<ServicePropose>();
 
     public String getLibelle() {
         return libelle;
@@ -37,13 +36,15 @@ public class CategorieService implements Serializable {
         this.libelle = libelle;
     }
 
-    public List<Service> getServices() {
-        return services;
+    public List<ServicePropose> getServiceProposes() {
+        return serviceProposes;
     }
 
-    public void setServices(List<Service> services) {
-        this.services = services;
+    public void setServiceProposes(List<ServicePropose> serviceProposes) {
+        this.serviceProposes = serviceProposes;
     }
+
+  
 
     public Long getId() {
         return id;

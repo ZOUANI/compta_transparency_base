@@ -19,7 +19,6 @@ import javax.persistence.ManyToOne;
 @Entity
 public class AssocieSociete implements Serializable {
 
-    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -27,7 +26,7 @@ public class AssocieSociete implements Serializable {
     private String prenom;
     private String cin;
     private String adresse;
-    private int nombreAction;
+    private Integer nombreAction;
 
     @ManyToOne
     private Societe societe;
@@ -64,11 +63,11 @@ public class AssocieSociete implements Serializable {
         this.adresse = adresse;
     }
 
-    public int getNombreAction() {
+    public Integer getNombreAction() {
         return nombreAction;
     }
 
-    public void setNombreAction(int nombreAction) {
+    public void setNombreAction(Integer nombreAction) {
         this.nombreAction = nombreAction;
     }
 

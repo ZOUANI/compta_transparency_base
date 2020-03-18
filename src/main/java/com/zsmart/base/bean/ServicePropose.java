@@ -19,9 +19,8 @@ import javax.persistence.ManyToOne;
  * @author hzouani6
  */
 @Entity
-public class Service implements Serializable {
+public class ServicePropose implements Serializable {
 
-    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -91,10 +90,10 @@ public class Service implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Service)) {
+        if (!(object instanceof ServicePropose)) {
             return false;
         }
-        Service other = (Service) object;
+        ServicePropose other = (ServicePropose) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

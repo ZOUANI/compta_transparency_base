@@ -18,7 +18,6 @@ import javax.persistence.Id;
 @Entity
 public class Admin implements Serializable {
 
-    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -26,8 +25,8 @@ public class Admin implements Serializable {
     private String nom;
     private String phone;
     private String password;
-    private boolean blocked;
-    private int nbrCnx=3;
+    private Boolean blocked;
+    private Integer nbrCnx=3;
     private String prenom;
 
     public String getPrenom() {
@@ -38,14 +37,7 @@ public class Admin implements Serializable {
         this.prenom = prenom;
     }
 
-    public boolean isBlocked() {
-        return blocked;
-    }
-
-    public void setBlocked(boolean blocked) {
-        this.blocked = blocked;
-    }
-
+   
     public String getPassword() {
         return password;
     }
@@ -54,13 +46,23 @@ public class Admin implements Serializable {
         this.password = Password;
     }
 
-    public int getNbrCnx() {
+    public Boolean getBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(Boolean blocked) {
+        this.blocked = blocked;
+    }
+
+    public Integer getNbrCnx() {
         return nbrCnx;
     }
 
-    public void setNbrCnx(int nbrCnx) {
+    public void setNbrCnx(Integer nbrCnx) {
         this.nbrCnx = nbrCnx;
     }
+
+  
 
     public String getLogin() {
         return login;
