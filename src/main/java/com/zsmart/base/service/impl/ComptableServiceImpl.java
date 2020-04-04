@@ -81,13 +81,7 @@ comptableClone.setVille(villeService.clone(comptable.getVille()));
 public Comptable clone(Comptable comptable){
 if(comptable== null){       return null ;
 }else{Comptable comptableClone= new Comptable();
-comptableClone.setId(comptable.getId());
-comptableClone.setNom(comptable.getNom());
-comptableClone.setEmail(comptable.getEmail());
-comptableClone.setTel(comptable.getTel());
-comptableClone.setLogin(comptable.getLogin());
-comptableClone.setPassword(comptable.getPassword());
-comptableClone.setVille(villeService.clone(comptable.getVille()));
+ clone(comptable,comptableClone);
 return comptableClone;
 }
 }

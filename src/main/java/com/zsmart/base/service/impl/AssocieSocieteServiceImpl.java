@@ -81,13 +81,7 @@ associesocieteClone.setSociete(societeService.clone(associesociete.getSociete())
 public AssocieSociete clone(AssocieSociete associesociete){
 if(associesociete== null){       return null ;
 }else{AssocieSociete associesocieteClone= new AssocieSociete();
-associesocieteClone.setId(associesociete.getId());
-associesocieteClone.setNom(associesociete.getNom());
-associesocieteClone.setPrenom(associesociete.getPrenom());
-associesocieteClone.setCin(associesociete.getCin());
-associesocieteClone.setAdresse(associesociete.getAdresse());
-associesocieteClone.setNombreAction(associesociete.getNombreAction());
-associesocieteClone.setSociete(societeService.clone(associesociete.getSociete()));
+ clone(associesociete,associesocieteClone);
 return associesocieteClone;
 }
 }

@@ -70,8 +70,7 @@ etatemployeeClone.setLibelle(etatemployee.getLibelle());
 public EtatEmployee clone(EtatEmployee etatemployee){
 if(etatemployee== null){       return null ;
 }else{EtatEmployee etatemployeeClone= new EtatEmployee();
-etatemployeeClone.setId(etatemployee.getId());
-etatemployeeClone.setLibelle(etatemployee.getLibelle());
+ clone(etatemployee,etatemployeeClone);
 return etatemployeeClone;
 }
 }

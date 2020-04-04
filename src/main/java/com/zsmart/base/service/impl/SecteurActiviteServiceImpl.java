@@ -70,8 +70,7 @@ secteuractiviteClone.setLibelle(secteuractivite.getLibelle());
 public SecteurActivite clone(SecteurActivite secteuractivite){
 if(secteuractivite== null){       return null ;
 }else{SecteurActivite secteuractiviteClone= new SecteurActivite();
-secteuractiviteClone.setId(secteuractivite.getId());
-secteuractiviteClone.setLibelle(secteuractivite.getLibelle());
+ clone(secteuractivite,secteuractiviteClone);
 return secteuractiviteClone;
 }
 }

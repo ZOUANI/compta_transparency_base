@@ -71,9 +71,7 @@ roleClone.setLien(role.getLien());
 public Role clone(Role role){
 if(role== null){       return null ;
 }else{Role roleClone= new Role();
-roleClone.setId(role.getId());
-roleClone.setLibelle(role.getLibelle());
-roleClone.setLien(role.getLien());
+ clone(role,roleClone);
 return roleClone;
 }
 }

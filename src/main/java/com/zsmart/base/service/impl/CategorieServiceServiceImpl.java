@@ -52,15 +52,15 @@ if(categorieservice== null){
    if(categorieservice.getServiceProposes().isEmpty()){
             return null;
         }else{
+categorieserviceDao.save(categorieservice);
             for (ServicePropose servicepropose : categorieservice.getServiceProposes()) {
 servicepropose.setCategorieService(categorieservice);
  serviceproposeService.save(  servicepropose);          
             }
-            }
-categorieserviceDao.save(categorieservice);
 return categorieservice;
 }
 }
+            }
 
  @Override 
 public List< CategorieService>  findAll(){
@@ -96,9 +96,7 @@ categorieserviceClone.setServiceProposes(serviceproposeService.clone(categoriese
 public CategorieService clone(CategorieService categorieservice){
 if(categorieservice== null){       return null ;
 }else{CategorieService categorieserviceClone= new CategorieService();
-categorieserviceClone.setId(categorieservice.getId());
-categorieserviceClone.setLibelle(categorieservice.getLibelle());
-categorieserviceClone.setServiceProposes(serviceproposeService.clone(categorieservice.getServiceProposes()));
+ clone(categorieservice,categorieserviceClone);
 return categorieserviceClone;
 }
 }

@@ -80,12 +80,7 @@ serviceproposeClone.setCategorieService(categorieserviceService.clone(servicepro
 public ServicePropose clone(ServicePropose servicepropose){
 if(servicepropose== null){       return null ;
 }else{ServicePropose serviceproposeClone= new ServicePropose();
-serviceproposeClone.setId(servicepropose.getId());
-serviceproposeClone.setLibelle(servicepropose.getLibelle());
-serviceproposeClone.setPrix(servicepropose.getPrix());
-serviceproposeClone.setDescription(servicepropose.getDescription());
-serviceproposeClone.setLien(servicepropose.getLien());
-serviceproposeClone.setCategorieService(categorieserviceService.clone(servicepropose.getCategorieService()));
+ clone(servicepropose,serviceproposeClone);
 return serviceproposeClone;
 }
 }

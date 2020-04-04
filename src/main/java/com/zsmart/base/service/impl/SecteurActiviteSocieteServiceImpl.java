@@ -83,9 +83,7 @@ secteuractivitesocieteClone.setSociete(societeService.clone(secteuractivitesocie
 public SecteurActiviteSociete clone(SecteurActiviteSociete secteuractivitesociete){
 if(secteuractivitesociete== null){       return null ;
 }else{SecteurActiviteSociete secteuractivitesocieteClone= new SecteurActiviteSociete();
-secteuractivitesocieteClone.setId(secteuractivitesociete.getId());
-secteuractivitesocieteClone.setSecteurActivite(secteuractiviteService.clone(secteuractivitesociete.getSecteurActivite()));
-secteuractivitesocieteClone.setSociete(societeService.clone(secteuractivitesociete.getSociete()));
+ clone(secteuractivitesociete,secteuractivitesocieteClone);
 return secteuractivitesocieteClone;
 }
 }

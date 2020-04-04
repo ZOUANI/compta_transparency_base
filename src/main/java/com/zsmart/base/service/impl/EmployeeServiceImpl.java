@@ -89,15 +89,7 @@ employeeClone.setEtatEmployee(etatemployeeService.clone(employee.getEtatEmployee
 public Employee clone(Employee employee){
 if(employee== null){       return null ;
 }else{Employee employeeClone= new Employee();
-employeeClone.setId(employee.getId());
-employeeClone.setNom(employee.getNom());
-employeeClone.setPrenom(employee.getPrenom());
-employeeClone.setCin(employee.getCin());
-employeeClone.setAdresse(employee.getAdresse());
-employeeClone.setSalaire(employee.getSalaire());
-employeeClone.setPrime(employee.getPrime());
-employeeClone.setSociete(societeService.clone(employee.getSociete()));
-employeeClone.setEtatEmployee(etatemployeeService.clone(employee.getEtatEmployee()));
+ clone(employee,employeeClone);
 return employeeClone;
 }
 }

@@ -70,8 +70,7 @@ typesocieteClone.setLibelle(typesociete.getLibelle());
 public TypeSociete clone(TypeSociete typesociete){
 if(typesociete== null){       return null ;
 }else{TypeSociete typesocieteClone= new TypeSociete();
-typesocieteClone.setId(typesociete.getId());
-typesocieteClone.setLibelle(typesociete.getLibelle());
+ clone(typesociete,typesocieteClone);
 return typesocieteClone;
 }
 }

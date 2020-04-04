@@ -70,8 +70,7 @@ villeClone.setLibelle(ville.getLibelle());
 public Ville clone(Ville ville){
 if(ville== null){       return null ;
 }else{Ville villeClone= new Ville();
-villeClone.setId(ville.getId());
-villeClone.setLibelle(ville.getLibelle());
+ clone(ville,villeClone);
 return villeClone;
 }
 }

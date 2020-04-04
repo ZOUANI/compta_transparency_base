@@ -52,15 +52,15 @@ if(adherent== null){
    if(adherent.getSocietes().isEmpty()){
             return null;
         }else{
+adherentDao.save(adherent);
             for (Societe societe : adherent.getSocietes()) {
 societe.setAdherent(adherent);
  societeService.save(  societe);          
             }
-            }
-adherentDao.save(adherent);
 return adherent;
 }
 }
+            }
 
  @Override 
 public List< Adherent>  findAll(){
@@ -100,13 +100,7 @@ adherentClone.setSocietes(societeService.clone(adherent.getSocietes()));
 public Adherent clone(Adherent adherent){
 if(adherent== null){       return null ;
 }else{Adherent adherentClone= new Adherent();
-adherentClone.setId(adherent.getId());
-adherentClone.setNom(adherent.getNom());
-adherentClone.setEmail(adherent.getEmail());
-adherentClone.setTel(adherent.getTel());
-adherentClone.setLogin(adherent.getLogin());
-adherentClone.setPassword(adherent.getPassword());
-adherentClone.setSocietes(societeService.clone(adherent.getSocietes()));
+ clone(adherent,adherentClone);
 return adherentClone;
 }
 }

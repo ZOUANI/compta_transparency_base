@@ -88,15 +88,15 @@ if(societe== null){
    if(societe.getAssocieSocietes().isEmpty()){
             return null;
         }else{
+societeDao.save(societe);
             for (AssocieSociete associesociete : societe.getAssocieSocietes()) {
 associesociete.setSociete(societe);
  associesocieteService.save(  associesociete);          
             }
-            }
-societeDao.save(societe);
 return societe;
 }
 }
+            }
 
  @Override 
 public List< Societe>  findAll(){
@@ -145,22 +145,7 @@ societeClone.setAssocieSocietes(associesocieteService.clone(societe.getAssocieSo
 public Societe clone(Societe societe){
 if(societe== null){       return null ;
 }else{Societe societeClone= new Societe();
-societeClone.setId(societe.getId());
-societeClone.setEnseigne(societe.getEnseigne());
-societeClone.setIdentifiantFiscal(societe.getIdentifiantFiscal());
-societeClone.setRc(societe.getRc());
-societeClone.setIce(societe.getIce());
-societeClone.setCapitale(societe.getCapitale());
-societeClone.setTotalAction(societe.getTotalAction());
-societeClone.setLoginDgi(societe.getLoginDgi());
-societeClone.setPaswordDgi(societe.getPaswordDgi());
-societeClone.setVille(villeService.clone(societe.getVille()));
-societeClone.setGerant(employeeService.clone(societe.getGerant()));
-societeClone.setTypeSociete(typesocieteService.clone(societe.getTypeSociete()));
-societeClone.setComptable(comptableService.clone(societe.getComptable()));
-societeClone.setAdherent(adherentService.clone(societe.getAdherent()));
-societeClone.setTypeDeclarationTva(typedeclarationtvaService.clone(societe.getTypeDeclarationTva()));
-societeClone.setAssocieSocietes(associesocieteService.clone(societe.getAssocieSocietes()));
+ clone(societe,societeClone);
 return societeClone;
 }
 }

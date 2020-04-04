@@ -70,8 +70,7 @@ typedeclarationtvaClone.setLibelle(typedeclarationtva.getLibelle());
 public TypeDeclarationTva clone(TypeDeclarationTva typedeclarationtva){
 if(typedeclarationtva== null){       return null ;
 }else{TypeDeclarationTva typedeclarationtvaClone= new TypeDeclarationTva();
-typedeclarationtvaClone.setId(typedeclarationtva.getId());
-typedeclarationtvaClone.setLibelle(typedeclarationtva.getLibelle());
+ clone(typedeclarationtva,typedeclarationtvaClone);
 return typedeclarationtvaClone;
 }
 }

@@ -76,14 +76,7 @@ adminClone.setPrenom(admin.getPrenom());
 public Admin clone(Admin admin){
 if(admin== null){       return null ;
 }else{Admin adminClone= new Admin();
-adminClone.setId(admin.getId());
-adminClone.setLogin(admin.getLogin());
-adminClone.setNom(admin.getNom());
-adminClone.setPhone(admin.getPhone());
-adminClone.setPassword(admin.getPassword());
-adminClone.setBlocked(admin.getBlocked());
-adminClone.setNbrCnx(admin.getNbrCnx());
-adminClone.setPrenom(admin.getPrenom());
+ clone(admin,adminClone);
 return adminClone;
 }
 }
