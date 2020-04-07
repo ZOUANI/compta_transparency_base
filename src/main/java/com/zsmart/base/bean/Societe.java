@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package com.zsmart.base.bean;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
